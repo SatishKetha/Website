@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone1-dep
+  namespace: capstone1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  capstone1
+  template:
+    metadata:
+      labels:
+        app:  capstone1
+    spec:
+      containers:
+      - name:  capstone1
+        image: satish2797/image1:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
